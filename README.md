@@ -1,3 +1,22 @@
+install project:
+
+git pull git@github.com:ztamulis/jas.git
+
+Setup:
+
+1. mv .env.example .env
+2. Change database credentials 
+3. composer update 
+4. php artisan migrate
+
+
+
+
+
+
+
+
+
 <p align="center">
     <img src="https://github.com/octobercms/october/blob/develop/themes/demo/assets/images/october.png?raw=true" alt="October" width="25%" height="25%" />
 </p>
