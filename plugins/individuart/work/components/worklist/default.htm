@@ -1,0 +1,30 @@
+{% set categories = __SELF__.categories %}
+{% set works = __SELF__.works %}
+
+{% if categories is not empty %}
+<div class="work-categories">
+    <div class="work-category selected" id="cat-0">all categories</div>
+    {% for cat in categories %}
+    <div class="work-category" id="cat-{{cat.id}}">{{cat.name}}</div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="work-list">
+    {% for work in works %}<div class="work {{work.css_categories}}" id="work{{work.id}}">
+        <img class="work__background" src="{{ 'plugins/individuart/work/assets/images/fnd-work.gif'}}" alt="">
+        <img class="work__image" src="{{work.featured_image.path}}" alt="{{work.name}}">
+        <div class="work__info">
+            <div class="work__infotable">
+                <div class="work__infocell">
+                    <h2 class="work__title">{{ work.name}}</h2>
+                    <h3 class="work__subtitle">{{work.description}}</h3>
+                    <a href="#view-work/{{work.id}}/{{ work.slug }}" class="work__button">view project</a>
+                </div>
+            </div>
+    </div>
+
+    </div>{% endfor %}
+</div>
+
+<div id="workdetail"></div>

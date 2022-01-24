@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: individuart.work::lang.backend.work
+
+# Model Form Field configuration
+form: $/individuart/work/models/work/fields.yaml
+
+# Model Class name
+modelClass: Individuart\Work\Models\Work
+
+# Default redirect location
+defaultRedirect: individuart/work/works
+
+# Create page
+create:
+    title: individuart.work::lang.backend.create_work
+    redirect: individuart/work/works/update/:id
+    redirectClose: individuart/work/works
+
+# Update page
+update:
+    title: individuart.work::lang.backend.edit_work
+    redirect: individuart/work/works
+    redirectClose: individuart/work/works
+
+# Preview page
+preview:
+    title: individuart.work::lang.backend.preview_work
