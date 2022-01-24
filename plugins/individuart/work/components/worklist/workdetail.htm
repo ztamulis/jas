@@ -1,0 +1,24 @@
+{% set work = __SELF__.work %}
+<div class="work-background">
+    <div class="work-info">
+        <img src="{{ 'plugins/individuart/work/assets/images/btn-close.svg'}}" class="work-close">
+        <h1 class="work-detail__title">{{work.name}}</h1>
+        <h2 class="work-detail__subtitle">{{work.description}}</h2>
+        {% if work.lst_categories is not empty %}
+        <h3 class="work-detail__categories">{{work.lst_categories}}</h3>
+        {% endif %}
+        {% if work.long_description %}
+        <div class="work-detail__longdesc">
+            {{work.long_description | raw}}
+        </div>
+        {% endif %}
+        {% if work.url %}
+        <a class="work-detail__link" href="{{work.url}}" onclick="window.open(this.href);return false;">ir al proyecto</a>
+        {% endif %}
+
+
+    </div>
+    <div class="work-detail">
+        <div class="work-detail__content">{{work.content | raw}}</div>
+    </div>
+</div>
