@@ -1,3 +1,4 @@
+[viewBag]
 ==
 <?php
 function onStart()
@@ -23,7 +24,11 @@ function onStart()
                     <li class="{% if this.page.id == 'index' %}active{% endif %}"><a href="{{ 'index'|page }}">Projects</a></li>
                     <li class="{% if this.page.id == 'about' %}active{% endif %}"><a href="{{ 'about'|page }}">Our Studio</a></li>
                     <li class="{% if this.page.id == 'contact' %}active{% endif %}"><a href="{{ 'contact'|page }}">Contact</a></li>
+                    <form class="navbar-form navbar-right">
+                        {% component 'localePicker' %}
+                    </form>
                </ul>
+               
           </div>
   </div>
 </div>
