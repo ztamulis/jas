@@ -9,6 +9,7 @@ use Model;
 class Work extends Model
 {
     use \October\Rain\Database\Traits\Sortable; //necesito esta clase para reordenar en el listado
+
     /**
      * @var string The database table used by the model.
      */

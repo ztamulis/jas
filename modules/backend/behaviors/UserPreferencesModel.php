@@ -4,7 +4,7 @@ use System\Behaviors\SettingsModel;
 use Backend\Models\UserPreference;
 
 /**
- * UserPreferencesModel extension, identical to System\Behaviors\SettingsModel
+ * UserPreferencesModel extension, identical to System\Behaviors\Settings
  * except values are set against the logged in user's preferences via Backend\Models\UserPreference
  *
  * Add this the model class definition:

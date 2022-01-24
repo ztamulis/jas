@@ -12,7 +12,7 @@ use System\Classes\ModelBehavior;
  *
  * Add this the model class definition:
  *
- *     public $implement = [\System\Behaviors\SettingsModel::class];
+ *     public $implement = [\System\Behaviors\Settings::class];
  *     public $settingsCode = 'author_plugin_code';
  *     public $settingsFields = 'fields.yaml';
  *
