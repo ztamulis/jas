@@ -1,0 +1,29 @@
+==
+<?php
+function onStart()
+{
+    $this['backendUrl'] = System::checkDebugMode() ? Backend::url('/') : null;
+}
+?>
+==
+<!-- Navigation section  -->
+
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+     <div class="container">
+          <div class="navbar-header">
+               <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+               </button>
+               <a href="{{ 'index'|page }}" class="navbar-brand"><i class="fa fa-magnet"></i></a>
+          </div>
+          <div class="collapse navbar-collapse">
+               <ul class="nav navbar-nav navbar-right">
+                    <li class="{% if this.page.id == 'index' %}active{% endif %}"><a href="{{ 'index'|page }}">Projects</a></li>
+                    <li class="{% if this.page.id == 'about' %}active{% endif %}"><a href="{{ 'about'|page }}">Our Studio</a></li>
+                    <li class="{% if this.page.id == 'contact' %}active{% endif %}"><a href="{{ 'contact'|page }}">Contact</a></li>
+               </ul>
+          </div>
+  </div>
+</div>

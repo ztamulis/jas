@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="keywords" content="">
+        <meta name="author" content="bla">
+        <meta name="generator" content="bla">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <title>Magnet - Minimal Portfolio Template</title>
+
+        <link rel="stylesheet" href="{{ 'assets/css/bootstrap.min.css'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/css/font-awesome.min.css'|theme }}">
+
+        <!-- Main css -->
+        <link rel="stylesheet" href="{{ 'assets/css/style.css'|theme }}">
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,  700"  rel="stylesheet">
+
+    </head>
+    <body class="{{ 'page-'~this.page.id }}">
+
+        
+
+        <!-- Header -->
+        <header id="layout-header">
+            {% partial 'header' %}
+        </header>
+
+        <section id="layout-content">
+            {% page %}
+        </section>
+
+        <footer id="layout-footer">
+            {% partial 'footer' %}
+        </footer>
+
+        <!-- SCRIPTS -->
+
+        <script src="{{ 'assets/js/jquery.js'|theme }}"></script>
+        <script src="{{ 'assets/js/bootstrap.min.js'|theme }}"></script>
+        <script src="{{ 'assets/js/custom.js'|theme }}"></script>
+
+        {% framework extras %}
+        {% scripts %}
+
+    </body>
+</html>
