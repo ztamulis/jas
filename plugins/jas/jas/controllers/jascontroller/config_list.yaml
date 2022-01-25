@@ -1,0 +1,12 @@
+list: $/jas/jas/models/project/columns.yaml
+modelClass: Jas\Jas\Models\Project
+title: JasController
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'jas/jas/jascontroller/update/:id'

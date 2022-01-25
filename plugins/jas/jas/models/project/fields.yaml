@@ -1,0 +1,6 @@
+fields:
+    description:
+        label: Description
+        size: ''
+        span: auto
+        type: richeditor

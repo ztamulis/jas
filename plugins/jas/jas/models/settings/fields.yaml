@@ -1,0 +1,15 @@
+tabs:
+    fields:
+      first_mini_news_text:
+        tab: First mini news block
+        label: 'Mini news text'
+        type: text
+        span: auto
+        value: 'empty'
+      first_mini_button_text:
+        tab: First mini news block
+        label: 'Button text'
+        type: text
+        span: auto
+        value: 'empty'
+

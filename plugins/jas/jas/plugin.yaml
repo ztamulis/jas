@@ -1,0 +1,20 @@
+plugin:
+    name: 'jas.jas::lang.plugin.name'
+    description: 'jas.jas::lang.plugin.description'
+    author: jas
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Jas
+        url: jas/jas/jascontroller
+        icon: icon-life-ring
+        sideMenu:
+            side-menu-item:
+                label: Projects
+                url: jas/jas/jascontroller
+                icon: icon-sitemap
+    main-menu-item2:
+        label: 'Menu Item'
+        icon: icon-life-ring
+        url: /

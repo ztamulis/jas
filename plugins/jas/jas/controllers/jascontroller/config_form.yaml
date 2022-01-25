@@ -1,0 +1,10 @@
+name: JasController
+form: $/jas/jas/models/project/fields.yaml
+modelClass: Jas\Jas\Models\Project
+defaultRedirect: jas/jas/jascontroller
+create:
+    redirect: 'jas/jas/jascontroller/update/:id'
+    redirectClose: jas/jas/jascontroller
+update:
+    redirect: jas/jas/jascontroller
+    redirectClose: jas/jas/jascontroller
