@@ -1,49 +1,57 @@
-url = "/single-project"
+url = "/project/:slug"
 layout = "default"
 title = "single-project"
+
+[builderDetails]
+modelClass = "admin\jas\Models\Project"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "name"
+notFoundMessage = "Record not found"
+
+[Worklist]
+
+[jasField]
 ==
-<!-- Single Project Section -->
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+   
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}
+
 
 <section id="single-project">
      <div class="container">
           <div class="row">
                <div class="col-md-offset-1 col-md-10 col-sm-12">
-                    <h1>Project title here</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <h1>{{ record.name }}</h1>
+                    <p>{{ record.short_description|raw }}</p>
                     <a href="#"><i class="fa fa-long-arrow-right"></i> View Website</a>
-
                     <div class="col-md-12 col-sm-12">
-                         <img src="{{ 'assets/images/single-project-img.jpg'|theme }}" class="img-responsive" alt="Portfolio">
+                         <img src="{{ record.image.thumb(auto, auto, {mode:'exact'}) }}" class="img-responsive" alt="Portfolio">
                     </div>
+               {% for image in record.images %}
 
                     <div class="col-md-6 col-sm-6">
-                         <img src="{{ 'assets/images/portfolio-img2.jpg'|theme }}" class="img-responsive" alt="Portfolio">
+                         <img src="{{ image.thumb(auto, auto, {mode:'exact'}) }}" class="img-responsive" alt="Portfolio">
                     </div>
 
-                    <div class="col-md-6 col-sm-6">
-                         <img src="{{ 'assets/images/portfolio-img3.jpg'|theme }}" class="img-responsive" alt="Portfolio">
-                    </div>
-
+               
+               {% endfor %}
                     <div class="clearfix"></div>
 
                     <div class="col-md-4 col-sm-4">
-                         <h3>Role</h3>
-                         <p>Brand Identity</p>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4">
                          <h3>Date</h3>
-                         <p>December, 2015</p>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4">
-                         <h3>Agency</h3>
-                         <p>Client Name here</p>
+                         <p>{{ record.date }}</p>
                     </div>
 
                     <div class="col-md-12 col-sm-12 text-center">
-                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                         <strong>James Otto ( Project Manager )..</strong>
+                         <p>{{ record.description|raw }}</p>
+                         <strong>{{ record.signature }}</strong>
                     </div>
                </div>
           </div>

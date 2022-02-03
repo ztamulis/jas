@@ -21,9 +21,9 @@ function onStart()
           </div>
           <div class="collapse navbar-collapse">
                <ul class="nav navbar-nav navbar-right">
-                    <li class="{% if this.page.id == 'index' %}active{% endif %}"><a href="{{ 'index'|page }}">Projects</a></li>
-                    <li class="{% if this.page.id == 'about' %}active{% endif %}"><a href="{{ 'about'|page }}">Our Studio</a></li>
-                    <li class="{% if this.page.id == 'contact' %}active{% endif %}"><a href="{{ 'contact'|page }}">Contact</a></li>
+                    <li class="{% if this.page.id == 'index' %}active{% endif %}"><a href="{{ 'index'|page }}">{{ "Projects"|_ }}</a></li>
+                    <li class="{% if this.page.id == 'about' %}active{% endif %}"><a href="{{ 'about'|page }}">{{ "Our Studio"|_ }}</a></li>
+                    <li class="{% if this.page.id == 'contact' %}active{% endif %}"><a href="{{ 'contact'|page }}">{{ "Contact"|_ }}</a></li>                  
                     <form class="navbar-form navbar-right">
                         {% component 'localePicker' %}
                     </form>

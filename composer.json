@@ -8,7 +8,10 @@
         "php": ">=7.2.9",
         "october/rain": "^2.0",
         "laravel/framework": "^6.0",
-        "october/all": "^2.0"
+        "october/all": "^2.0",
+        "rainlab/translate-plugin": "^1.9",
+        "individuart/work-plugin": "^1.1",
+        "rainlab/builder-plugin": "^1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0|^9.0",

@@ -1,6 +1,10 @@
 url = "/contact"
 layout = "default"
 title = "contact"
+
+[jasField]
+
+[Worklist]
 ==
 <!-- Contact Section -->
 
@@ -9,29 +13,29 @@ title = "contact"
           <div class="row">
                <div class="col-md-offset-1 col-md-10 col-sm-12">
                     <div class="section-title">
-                         <h3>get in touch</h3>
-                         <h2>The creative web & mobile studio and focused on brand identity, web development and social marketing.</h2>
+                         <h3>{{ jasField.get ('contact_title') }}</h3>
+                         <h2>{{ jasField.get ('contact_content') }}</h2>
                     </div>
                     <form action="#" method="post">
                          <div class="col-md-6 col-sm-6">
-                              <input type="text" class="form-control" placeholder="Name">
+                              <input type="text" class="form-control" placeholder='{{ "Name"|_ }}'>
                          </div>
                          <div class="col-md-6 col-sm-6">
-                              <input type="email" class="form-control" placeholder="Email">
+                              <input type="email" class="form-control" placeholder='{{ "Email"|_ }}'>
                          </div>
                          <div class="col-md-6 col-sm-6">
-                              <input type="telephone" class="form-control" placeholder="Phone Number">
+                              <input type="telephone" class="form-control" placeholder='{{ "Phone Number"|_ }}'>
                          </div>
                          <div class="col-md-6 col-sm-6">
                               <select class="form-control">
-                                   <option>Budget Select</option>
+                                   <option>{{"Budget Select"|_}}</option>
                                    <option>$1200 to $1600</option>
                                    <option>$2200 to $2400</option>
                                    <option>$2500 to $3800</option>
                               </select>
                          </div>
                          <div class="col-md-12 col-sm-12"> 
-                              <textarea class="form-control" rows="5" placeholder="Project Details"></textarea>
+                              <textarea class="form-control" rows="5" placeholder='{{ "Project Details"|_ }}'></textarea>
                          </div>
                          <div class="col-md-3 col-sm-4">
                               <input type="submit" class="form-control" value="Send Message">

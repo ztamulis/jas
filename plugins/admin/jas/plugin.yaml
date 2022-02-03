@@ -1,0 +1,16 @@
+plugin:
+    name: 'admin.jas::lang.plugin.name'
+    description: 'admin.jas::lang.plugin.description'
+    author: admin
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'JAS Projektai'
+        url: admin/jas/projectscontroller
+        icon: icon-columns
+        sideMenu:
+            side-menu-item:
+                label: 'Project list'
+                url: admin/jas/projectscontroller
+                icon: icon-sort-desc

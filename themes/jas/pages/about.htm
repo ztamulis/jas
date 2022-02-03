@@ -1,6 +1,10 @@
 url = "/about"
 layout = "default"
 title = "about"
+
+[jasField]
+
+[Worklist]
 ==
 <!-- About Section -->
 
@@ -9,48 +13,29 @@ title = "about"
           <div class="row">
                <div class="col-md-offset-1 col-md-10 col-sm-12">
                     <div class="section-title">
-                         <h3>about our story</h3>
-                         <h2>The creative web & mobile studio and focused on brand identity, web development and social marketing.</h2>
+                         <h3>{{ jasField.get ('our_studio_title') }}</h3>
+                         <h2>{{ jasField.get ('our_studio_content') }}</h2>
                     </div>
                     <div class="col-md-8 col-sm-12">
-                         <img src="{{ 'assets/images/about-image.jpg'|theme }}" class="img-responsive" alt="About">
+                         <img src="{{ jasField.get ('images').thumb(auto, auto, {mode:'exact'}) }}" class="img-responsive" alt="About">
                     </div>
 
                     <div class="col-md-4 col-sm-12">
-                         <h1>Magnet Studio</h1>
-                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                         <h1>{{ jasField.get ('our_studio_mid_title') }}</h1>
+                         <p>{{ jasField.get ('our_studio_mid_content') }}</p>
                     </div>
                     <div class="clearfix"></div>
                      <hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <p>{{ jasField.get ('our_studio_bot_content') }}</p>
                     <hr>
                     <div class="col-md-4 col-sm-6">
-                         <h3>Web Development</h3>
-                         <ul>
-                              <li>Online Shopping Site</li>
-                              <li>Wordpress CMS</li>
-                              <li>Bootstrap themes</li>
-                              <li>Web Application</li>
-                         </ul>
+                         {{ jasField.get ('our_studio_bot_list1')|raw }}
                     </div>
                     <div class="col-md-4 col-sm-6">
-                         <h3>Brand Identity</h3>
-                         <ul>
-                              <li>Logo Design</li>
-                              <li>Personal Branding</li>
-                              <li>Flyer Design</li>
-                              <li>Creative Direction</li>
-                         </ul>
+                         {{ jasField.get ('our_studio_bot_list2')|raw }}
                     </div>
                     <div class="col-md-4 col-sm-6">
-                         <h3>Social marketing</h3>
-                         <ul>
-                              <li>facebook, twitter.</li>
-                              <li>Page Maintenance</li>
-                              <li>Social media</li>
-                         </ul>
+                         {{ jasField.get ('our_studio_bot_list3')|raw }}
                     </div>
                </div>
 

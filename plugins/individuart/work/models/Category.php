@@ -44,4 +44,9 @@ class Category extends Model
 
     }
 
+    public function scopeJhkh($query)
+    {
+        return $query->where('published',true);
+
+    }
 }

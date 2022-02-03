@@ -1,0 +1,10 @@
+name: ProjectsController
+modelClass: admin\jas\Models\Project
+form: $/admin/jas/models/project/fields.yaml
+defaultRedirect: admin/jas/projectscontroller
+create:
+    redirect: 'admin/jas/projectscontroller/update/:id'
+    redirectClose: admin/jas/projectscontroller
+update:
+    redirect: admin/jas/projectscontroller
+    redirectClose: admin/jas/projectscontroller

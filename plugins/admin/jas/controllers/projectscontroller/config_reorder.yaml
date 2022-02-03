@@ -1,0 +1,5 @@
+title: ProjectsController
+modelClass: admin\jas\Models\Project
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

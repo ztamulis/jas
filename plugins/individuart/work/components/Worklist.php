@@ -71,9 +71,7 @@ class Worklist extends ComponentBase
 
     public function work(){
         $work_id = post('work_id');
-        //extraigo los datos de este trabajo para pasarlos al partial
         $work = Work::find($work_id);
-        //extract categories work from
         $categories = $work->categories;
         if(!empty($categories))
         {

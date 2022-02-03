@@ -1,14 +1,60 @@
 url = "/"
 layout = "default"
 title = "index"
+
+[jasField]
+
+[Worklist]
+
+[builderList]
+modelClass = "admin\jas\Models\Project"
+scope = "scopePublished"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "single-project"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+sortColumn = "sort_order"
+sortDirection = "desc"
 ==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+
+
+{% if records.lastPage > 1 %}
+    <ul class="pagination">
+        {% if records.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..records.lastPage %}
+            <li class="{{ records.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+
+
 <!-- Home Section -->
 
 <section id="home">
      <div class="container">
           <div class="row">
                <div class="col-md-12 col-sm-12">
-                    <h2>{{ 'The creative web & mobile studio. we are young designers and focused on brand identity, web development and social marketing.'|_ }}</h2>
+                    <h2>{{ jasField.get ('project_content') }}</h2>
                     <hr>
                </div>
           </div>
@@ -20,86 +66,35 @@ title = "index"
 <section id="portfolio">
      <div class="container">
           <div class="row">
-               <div class="col-md-4 col-sm-6">
-                    <a href="{{ 'single-project'|page }}">
-                         <div class="portfolio-thumb">
-                              <img src="{{ 'assets/images/portfolio-img1.jpg'|theme }}" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Brand Identity</small>
-                                        </div>
+               {% for record in records %}
+                    {# Use spaceless tag to remove spaces inside the A tag. #}
+                    {% spaceless %}
+                         <div class="col-md-4 col-sm-6">
+                              {% if detailsPage %}
+                              <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                              {% endif %}
+                                   <div class="portfolio-thumb">
+                                        <img src="{{ record.image.thumb(360, 303, {mode:'crop'}) }}" class="img-responsive" alt="Portfolio">
+                                             <div class="portfolio-overlay">
+                                                  <div class="portfolio-item">
+                                                       <h3>{{ record.name }}</h3>
+                                                       <small>{{ record.sub_name }}</small>
+                                                  </div>
+                                             </div>
                                    </div>
+                              </a>
                          </div>
-                    </a>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                    <a href="{{ 'single-project'|page }}">
-                         <div class="portfolio-thumb">
-                              <img src="{{ 'assets/images/portfolio-img2.jpg'|theme }}" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Web Development</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                    <a href="{{ 'single-project'|page }}">
-                         <div class="portfolio-thumb">
-                              <img src="{{ 'assets/images/portfolio-img3.jpg'|theme }}" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Mobile App</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                    <a href="{{ 'single-project'|page }}">
-                         <div class="portfolio-thumb">
-                              <img src="{{ 'assets/images/portfolio-img4.jpg'|theme }}" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Logo Design</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                    <a href="{{ 'single-project'|page }}">
-                         <div class="portfolio-thumb">
-                              <img src="{{ 'assets/images/portfolio-img5.jpg'|theme }}" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Social marketing</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                    <a href="{{ 'single-project'|page }}">
-                         <div class="portfolio-thumb">
-                              <img src="{{ 'assets/images/portfolio-img6.jpg'|theme }}" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Fyler Design</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
+                         {% if detailsPage %}
+                              </a>
+                         {% endif %}
+                    {% endspaceless %}
+                    
+               {% else %}
+                    <li class="no-data">{{ noRecordsMessage }}</li>
+               {% endfor %}
+               
                <div class="col-md-12 col-sm-12 text-center">
-                    <h3>hello, if you interest working together. just send message <a href="contact.html">contact page</a></h3>
+                    <h3>{{ jasField.get ('project_bot_content') }} <a href="{{ jasField.get ('project_link') }}"">{{ jasField.get ('project_link_name') }}</a></h3>
                </div>
           </div>
      </div>

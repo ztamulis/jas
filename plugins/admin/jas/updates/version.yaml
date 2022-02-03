@@ -1,0 +1,17 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table admin_jas_projects'
+    - builder_table_create_admin_jas_projects.php
+1.0.3:
+    - 'Updated table admin_jas_projects'
+    - builder_table_update_admin_jas_projects.php
+1.0.4:
+    - 'Updated table admin_jas_projects'
+    - builder_table_update_admin_jas_projects_2.php
+1.0.5:
+    - 'Updated table admin_jas_projects'
+    - builder_table_update_admin_jas_projects_3.php
+1.0.6:
+    - 'Updated table admin_jas_projects'
+    - builder_table_update_admin_jas_projects_4.php

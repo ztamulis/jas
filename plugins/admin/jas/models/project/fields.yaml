@@ -1,0 +1,50 @@
+fields:
+    name:
+        label: title
+        span: full
+        type: text
+    sub_name:
+        label: subtitle
+        span: full
+        type: text    
+    short_description:
+        label: short_description
+        size: large
+        span: full
+        type: richeditor
+    description:
+        label: description
+        size: huge
+        span: full
+        type: richeditor
+    signature:
+        label: signature
+        span: full
+        type: text
+    date:
+        label: date
+        mode: datetime
+        span: full
+        type: datepicker
+    image:
+        label: image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    images:
+        label: images
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    published:
+        label: publish
+        span: full
+        type: switch
