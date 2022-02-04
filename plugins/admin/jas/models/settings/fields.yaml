@@ -69,19 +69,19 @@ tabs:
         type: textarea
         span: full
         value: 'empty'
-      our_studio_bot_list1:
+      our_studio_bot_list_1:
         tab: Our_studio
         label: 'Bottom list 1'
         type: richeditor
         size: large
         span: full
-      our_studio_bot_list2:
+      our_studio_bot_list_2:
         tab: Our_studio
         label: 'Bottom list 2'
         type: richeditor
         size: large
         span: full 
-      our_studio_bot_list3:
+      our_studio_bot_list_3:
         tab: Our_studio
         label: 'Bottom list 3'
         type: richeditor

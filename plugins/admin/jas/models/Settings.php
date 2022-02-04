@@ -14,7 +14,7 @@ class Settings extends Model {
     public $translatable = ['project_title', 'project_content', 'project_bot_content', 
                             'project_link_name', 'our_studio_title', 'our_studio_content', 
                             'our_studio_mid_title', 'our_studio_mid_content', 'our_studio_bot_content', 
-                            'our_studio_bot_list1', 'our_studio_bot_list2', 'our_studio_bot_list3', 
+                            'our_studio_bot_list_1', 'our_studio_bot_list_2', 'our_studio_bot_list_3', 
                             'contact_title', 'contact_content', 'footer_address', 'footer_copyright'
                             ];
 
