@@ -30,33 +30,4 @@ class SiteSettings extends ComponentBase
     {
         return Settings::getValue($sCode);
     }
-
-    /**
-     * Get phone number by field code
-     * @param $sCode
-     * @return mixed
-     */
-    public function getPhone($sCode)
-    {
-        $sValue = $this->get($sCode);
-        return $this->getPhoneValue($sValue);
-    }
-
-    /**
-     * @param string $sValue
-     * @return null|string|string[]
-     */
-    public function getPhoneValue($sValue)
-    {
-        return preg_replace('%\D\+%', '', $sValue);
-    }
-
-    /**
-     * @param $sCode
-     * @return \System\Models\File|null
-     */
-    public function getImage($sCode)
-    {
-        return Settings::getImageData($sCode);
-    }
 }

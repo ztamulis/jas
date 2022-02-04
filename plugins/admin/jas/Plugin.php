@@ -5,14 +5,6 @@ use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
-    public function boot()
-    {
-        Work::extend(function ($model) {
-            $model->implement[] = 'RainLab.Translate.Behaviors.TranslatableModel';
-            $model->addDynamicProperty('translatable', ['name', 'description']);
-            // like this ^
-        });    }
-
     public function registerComponents()
     {
         return [

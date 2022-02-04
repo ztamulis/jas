@@ -41,23 +41,4 @@ class Settings extends Model {
         $sValue = $obSettings->$sCode;
         return $sValue;
     }
-
-    
-
-    /**
-     * Get Image data
-     * @param $sCode
-     * @return \System\Models\File|null
-     */
-    public static function getImageData($sCode) {
-
-        /** @var File $obImage */
-        $obImage = File::where('attachment_type', 'Lovata\SiteSettings\Models\Settings')->where('field', $sCode)->first();
-        if(empty($obImage)) {
-            return null;
-        }
-
-        return $obImage;
-    }
-
 }
