@@ -1,0 +1,157 @@
+tabs:
+    fields:
+# Project
+      project_content:
+        tab: Project
+        label: 'Content'
+        type: textarea
+        size: large
+        span: full
+        value: 'empty'
+      project_bot_content:
+        tab: Project
+        label: 'bottom Content'
+        type: textarea
+        size: large
+        span: full
+        value: 'empty'
+      project_link:
+        tab: Project
+        label: 'Link url'
+        type: text
+        size: large
+        span: full
+        value: 'Http://'
+      project_link_name:
+        tab: Project
+        label: 'Link name'
+        type: text
+        size: large
+        span: full  
+# Our studio
+      our_studio_title:
+        tab: Our_studio
+        label: 'Title'
+        type: text
+        span: full
+        value: 'empty'
+      our_studio_content:
+        tab: Our_studio
+        label: 'Content'
+        type: textarea
+        span: full
+        value: 'empty'  
+      images:
+        tab: Our_studio
+        label: Image
+        mode: image
+        useCaption: true
+        thumbOptions:
+          mode: crop
+          extension: auto
+        span: auto
+        type: fileupload
+      our_studio_mid_title:
+        tab: Our_studio
+        label: 'middle section Title'
+        type: text
+        span: full
+        value: 'empty'
+      our_studio_mid_content:
+        tab: Our_studio
+        label: 'middle section Content'
+        type: textarea
+        span: full
+        value: 'empty'    
+      our_studio_bot_content:
+        tab: Our_studio
+        label: 'bottom section Content'
+        type: textarea
+        span: full
+        value: 'empty'
+      our_studio_bot_list_1:
+        tab: Our_studio
+        label: 'Bottom list 1'
+        type: richeditor
+        size: large
+        span: full
+      our_studio_bot_list_2:
+        tab: Our_studio
+        label: 'Bottom list 2'
+        type: richeditor
+        size: large
+        span: full 
+      our_studio_bot_list_3:
+        tab: Our_studio
+        label: 'Bottom list 3'
+        type: richeditor
+        size: large
+        span: full                   
+# Contact
+      contact_title:
+        tab: Contact
+        label: 'Title'
+        type: text
+        span: full
+        value: 'empty'
+      contact_content:
+        tab: Contact
+        label: 'Content'
+        type: textarea
+        span: full
+        value: 'empty'
+# Footer
+      footer_logo:
+        tab: Footer
+        label: 'Logo'
+        mode: image
+        useCaption: true
+        thumbOptions:
+          mode: crop
+          extension: auto
+        span: auto
+        type: fileupload
+      footer_address:
+        tab: Footer
+        label: 'Location'
+        type: text
+        span: auto
+        value: 'empty'
+      footer_phone:
+        tab: Footer
+        label: 'Phone number'
+        type: text
+        span: auto
+        value: 'empty'  
+      footer_email:
+        tab: Footer
+        label: 'E-mail address'
+        type: text
+        span: auto
+        value: 'empty'  
+      footer_copyright:
+        tab: Footer
+        label: 'Copyrights'
+        type: text
+        span: auto
+        value: 'empty'    
+      footer_fb_link:
+        tab: Footer
+        label: 'Facebook'
+        type: text
+        span: auto
+        value: 'empty'  
+      footer_twitter_link:
+        tab: Footer
+        label: 'Twitter'
+        type: text
+        span: auto
+        value: 'empty'    
+      footer_linkedin_link:
+        tab: Footer
+        label: 'Linked in'
+        type: text
+        span: auto
+        value: 'empty'   
+
+

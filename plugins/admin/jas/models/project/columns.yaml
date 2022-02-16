@@ -1,0 +1,21 @@
+columns:
+    name:
+        label: title
+        type: text
+        searchable: true
+        sortable: true
+    short_description:
+        label: short_desc
+        type: text
+        searchable: true
+        sortable: true
+    published:
+        label: publish
+        type: switch
+        searchable: true
+        sortable: true
+    date:
+        label: date
+        type: date
+        searchable: true
+        sortable: true
